@@ -25,3 +25,48 @@ ls -l | grep "file"
 # find -> search for files in a directory hierarchy
 # find [path] [expression]
 find . -name "file"
+
+# grep -> search for patterns in files
+# grep [pattern] [file]
+grep "hello" file
+
+# grep but find everything else except the pattern
+grep -v "hello" file
+
+# awk -> pattern scanning and processing language
+# awk [pattern] [file]
+awk '{print $1}' file
+
+# print last column
+awk '{print $NF}' file
+
+# print n row
+awk 'NR==2' file
+
+# sudo -> run command as superuser
+sudo command
+
+# change ownership
+sudo chown user:group file
+
+# change permissions
+# chmod [permissions] [file]\
+chown 777 file
+
+# recursive
+chown -R 777 directory
+
+# change group -> chgrp
+chgrp group file
+
+# variables
+# variable_name=value
+name="john"
+
+# substitute variable
+echo $name
+
+# permanent environment variable
+# add this to .bashrc
+export name="john"
+

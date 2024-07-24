@@ -70,3 +70,13 @@ echo $name
 # add this to .bashrc
 export name="john"
 
+# read -> read a line from standard input
+read name
+echo $name
+
+# read password
+read -s password
+
+# read multiple variables
+read name age
+echo $name $age

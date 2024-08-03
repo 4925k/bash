@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # check if the number is divisible by 2, 3, 5
 divisible() {
   local x=$1

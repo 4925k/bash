@@ -10,18 +10,21 @@ if [ ! -d found ]; then
   mkdir found
 fi
 
-# loop over all files in current directory
-for file in *; do
-  # check for files and folders
-  if [ -f "$file" ]; then
-    # look for the word in the file
-    match=$(grep -in "$word" "$file")
-    if [ -n "$match" ]; then
-      echo "found in $file: $match"
-      mv "$file" found/
+# make a recursive search
+find() {
+  # loop over all files in current directory
+  for file in $1; do
+    # check for files and folders
+    if [ -f "$file" ]; then
+      # look for the word in the file
+      match=$(grep -in "$word" "$file")
+      if [ -n "$match" ]; then
+        cp "$file" found/
+      fi
+    else
+      find "$file"
     fi
-  else
-    echo ""
-#    echo "found non file: $file"
-  fi
-done
+  done
+}
+
+find $(find . -)

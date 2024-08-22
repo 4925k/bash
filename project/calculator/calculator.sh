@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ "$1" == "-p" ]; then
   precision=$2
   shift 2
